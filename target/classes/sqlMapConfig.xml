@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--整合后不需要这个文件了-->
+<!--整合后不需要这个文件了-->
+<!--整合后不需要这个文件了-->
+
+
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--    配置环境-->
+    <environments default="mysql">
+        <!--        配置mysql的环境-->
+        <environment id="mysql">
+            <!--            配置事务类型-->
+            <transactionManager type="JDBC"></transactionManager>
+            <!--            配置数据源（连接池）-->
+            <dataSource type="POOLED">
+                <!--                配置连接数据库的4个基本信息-->
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://139.199.69.163:3307/ssm"/>
+                <property name="username" value="root"/>
+                <property name="password" value="root"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--    指定映射配置文件  映射配置文件的是每个dao独立的配置文件-->
+    <mappers>
+<!--        配置文件的写法-->
+<!--        <mapper resource="com/mybatis/dao/IUserDao.xml"></mapper>-->
+<!--        一个dao接口写法-->
+<!--        <mapper class="cn.swingz.dao.AccountDao" />-->
+<!--        所有包的写法-->
+        <package name="cn.swingz.dao"/>
+    </mappers>
+
+</configuration>
